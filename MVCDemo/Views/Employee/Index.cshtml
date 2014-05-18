@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<MVCDemo.Models.Employee>
 
-@using MvcDemo.Models;
+@using MVCDemo.Models;
 
 @{
     ViewBag.Title = "Employee List";
@@ -11,7 +11,7 @@
         @foreach (Employee employee in @Model)
         {
             <li>
-                @Html.ActionLink(employee.Name, "Details", new { id = employee.EmployeeiD })
+                @Html.ActionLink(employee.Name, "Details", new { id = employee.EmployeeId })
             </li>
         }
     </ul>
