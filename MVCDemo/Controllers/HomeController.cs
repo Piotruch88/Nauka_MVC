@@ -17,7 +17,7 @@ namespace MVCDemo.Controllers
             SampleDBContext db = new SampleDBContext();
             List<SelectListItem> selectListItems = new List<SelectListItem>();
 
-            foreach (tblDepartment department in db.tblDepartments)
+            foreach (Department department in db.tblDepartments)
             {
                 SelectListItem selectListItem = new SelectListItem
                 {

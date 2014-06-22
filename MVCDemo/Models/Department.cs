@@ -12,7 +12,7 @@ namespace MVCDemo.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tblDepartment
+    public partial class Department
     {
         public int Id { get; set; }
         public string Name { get; set; }

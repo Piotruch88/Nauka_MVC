@@ -21,9 +21,9 @@
     <edmx:ConceptualModels>
       <Schema Namespace="Models" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="SampleDBContext" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="tblDepartments" EntityType="Models.tblDepartment" />
+          <EntitySet Name="tblDepartments" EntityType="Models.Department" />
         </EntityContainer>
-        <EntityType Name="tblDepartment">
+        <EntityType Name="Department">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -38,7 +38,7 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ModelsStoreContainer" CdmEntityContainer="SampleDBContext">
           <EntitySetMapping Name="tblDepartments">
-            <EntityTypeMapping TypeName="Models.tblDepartment">
+            <EntityTypeMapping TypeName="Models.Department">
               <MappingFragment StoreEntitySet="tblDepartment">
                 <ScalarProperty Name="IsSelected" ColumnName="IsSelected" />
                 <ScalarProperty Name="Id" ColumnName="Id" />

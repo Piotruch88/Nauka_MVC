@@ -121,6 +121,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Department.cs">
+      <DependentUpon>SampleDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SampleDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -135,9 +138,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SampleDataModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblDepartment.cs">
-      <DependentUpon>SampleDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

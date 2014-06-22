@@ -25,6 +25,6 @@ namespace MVCDemo.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<tblDepartment> tblDepartments { get; set; }
+        public DbSet<Department> tblDepartments { get; set; }
     }
 }
