@@ -9,25 +9,24 @@ namespace MVCDemo.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
         public ActionResult Index()
         {
-            Company company = new Company("Pragim");
-
-            ViewBag.Departments = new SelectList(company.Departments, "Id", "Name");
-            ViewBag.CompanyName = company.CompanyName;
-
-            return View();
-        }
-
-        public ActionResult Index1()
-        {
-            Company company = new Company("Pragim");
+            Company company = new Company();
             return View(company);
         }
 
-        public ActionResult Detalis(int id)
+        [HttpPost]
+        public string Index(Company company)
         {
-            return View();
-        }
+            if (string.IsNullOrEmpty(company.SelectedDepartment))
+            {
+                return "Nie wybrałeś żadnego department";
+            }
+            else
+            {
+                return "Wybrałeś department z Id = " + company.SelectedDepartment;
+            }
+        }  
     }
 }

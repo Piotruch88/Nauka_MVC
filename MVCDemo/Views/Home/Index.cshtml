@@ -1,10 +1,20 @@
-﻿@{
+﻿@model MVCDemo.Models.Company
+
+@{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
-
-@Html.TextBox("CompanyName", (string)ViewBag.CompanyName)
-<br />
-@Html.DropDownList("Departments", "Select Department")
+@using (Html.BeginForm())
+{
+    foreach (var deparment in Model.Departments)
+    {
+    @Html.RadioButtonFor(m => m.SelectedDepartment, deparment.Id, (deparment.IsSelected.HasValue && deparment.IsSelected.Value) ? new { @checked = "checked" } : null)
+    @deparment.Name
+    <br />
+    }
+    <br />
+    <br />
+    <input type="submit" value="Submit" />
+}
