@@ -2,6 +2,9 @@
     ViewBag.Title = "Index";
 }
 
-<h2>HTML Helpers Demo</h2>
+<h2>Index</h2>
 
+
+@Html.TextBox("CompanyName", (string)ViewBag.CompanyName)
+<br />
 @Html.DropDownList("Departments", "Select Department")

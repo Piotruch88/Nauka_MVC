@@ -9,26 +9,24 @@ namespace MVCDemo.Controllers
 {
     public class HomeController : Controller
     {
-        //
-        // GET: /Home/
-
         public ActionResult Index()
         {
-            SampleDBContext db = new SampleDBContext();
-            List<SelectListItem> selectListItems = new List<SelectListItem>();
+            Company company = new Company("Pragim");
 
-            foreach (Department department in db.tblDepartments)
-            {
-                SelectListItem selectListItem = new SelectListItem
-                {
-                    Text = department.Name,
-                    Value = department.Id.ToString(),
-                    Selected = department.IsSelected.HasValue ? department.IsSelected.Value : false
-                };
-                selectListItems.Add(selectListItem);
-            }
+            ViewBag.Departments = new SelectList(company.Departments, "Id", "Name");
+            ViewBag.CompanyName = company.CompanyName;
 
-            ViewBag.Departments = selectListItems;
+            return View();
+        }
+
+        public ActionResult Index1()
+        {
+            Company company = new Company("Pragim");
+            return View(company);
+        }
+
+        public ActionResult Detalis(int id)
+        {
             return View();
         }
     }
